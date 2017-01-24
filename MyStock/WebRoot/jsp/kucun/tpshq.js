@@ -48,7 +48,7 @@ Ext.onReady(function(){
 						var datapath = f.findField("imagepath").getValue();
 						if (datapath) {
 							Ext.Ajax.request({
-					   			url : "dataCopy_backup.do",
+					   			url : "**.do",
 					   			params:{ datapath : datapath },
 					   			success : function(o) {
 						   			if(o.responseText=="true"){

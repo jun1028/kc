@@ -187,7 +187,7 @@ Ext.onReady(function(){
 						id:'jhriqi',
 						xtype:"datefield",
 						name:'riqi',
-						fieldLabel:"收货日期",
+						fieldLabel:"进货日期",
 						format:'Y-m-d',
 						allowBlank : false,
 						value:new Date(),

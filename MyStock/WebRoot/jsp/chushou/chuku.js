@@ -186,7 +186,7 @@ Ext.onReady(function(){
 						id:'jhriqi',
 						xtype:"datefield",
 						name:'riqi',
-						fieldLabel:"收货日期",
+						fieldLabel:"销售日期",
 						format:'Y-m-d',
 						allowBlank : false,
 						value:new Date(),
@@ -216,7 +216,7 @@ Ext.onReady(function(){
 						maxLength :200
 					}]
 				},{
-					columnWidth:0.4,
+					columnWidth:.4,
 					items:[{
 						xtype:'combo',
 						hiddenName:'jystate',

@@ -160,12 +160,12 @@
 		{ name:"spid", type:"string"},
 		{ name:"spname", type:"string"},
 		{ name:"tuhao", type:"string"},
+		{ name:"kcsl", type:"int"},
 		{ name:"xinghao", type:"string"},
 		{ name:"dw", type:"string"},
 		{ name:"jhprice", type:"double"},
 		{ name:"chprice", type:"double"},
 		{ name:"scjj", type:"double"},
-		{ name:"kcsl", type:"int"},
 		{ name:"minnum", type:"string"},
 		{ name:"csname", type:"string"},
 		{ name:"cktype", type:"string"},
@@ -193,10 +193,10 @@
 	            {header: "商品名称", width: 130, sortable:true, dataIndex: "spname"},
 	            {header: "商品型号", width: 80, sortable:true, dataIndex: "xinghao"},
 	            {header: "图号", width: 80, sortable:true, dataIndex: "tuhao"},
+	            {header: "库存数量", width: 60, sortable:true, align:"right", dataIndex: "kcsl"},
 	            {header: "单位", width: 50, sortable:true, dataIndex: "dw"},
 	            {header: "上次进价", width: 60, sortable:true, align:"right", renderer:zhMoney, dataIndex: "scjj"},
-	            {header: "成本均价", width: 60, sortable:true, align:"right", renderer:zhMoney, dataIndex: "jhprice"},
-	            {header: "库存数量", width: 60, sortable:true, align:"right", dataIndex: "kcsl"}]
+	            {header: "成本均价", width: 60, sortable:true, align:"right", renderer:zhMoney, dataIndex: "jhprice"}]
         }),
         stripeRows: true, 	//行分隔符
         columnLines : true, //列分隔符

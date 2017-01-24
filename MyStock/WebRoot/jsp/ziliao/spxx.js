@@ -229,7 +229,14 @@ Ext.onReady(function(){
 					fieldLabel:'商品编码',
 					allowBlank : false,
 					style:"background:#F6F6F6",
-					readOnly:true,
+//					readOnly:true,
+					maxLength :10
+				},{
+					xtype : 'textfield',
+					name:'tuhao',
+					fieldLabel:'图&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号',
+					allowBlank : false,
+					style:"background:#F6F6F6",
 					maxLength :10
 				},{
 					layout:'column',
