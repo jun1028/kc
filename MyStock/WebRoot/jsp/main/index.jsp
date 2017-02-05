@@ -9,7 +9,7 @@
 %> 
 <html>
   <head>
-  	<title>库存管理系统</title>
+  	<title>金昌库存管理系统</title>
     <script type="text/javascript">
 	     window.log_id="<%=userInfo.getUserid()%>";
 	     window.log_name="<%=userInfo.getUsername()%>";

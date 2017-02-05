@@ -8,17 +8,17 @@ public interface SplbBiz {
 	
 	
 	/**
-	 * 保存/修改商品类别
+	 * 保存/修改产品类别
 	 */
 	public Integer saveOrUpdateSplb(SplbDTO dto);
 	
 	/**
-	 * 删除商品类别
+	 * 删除产品类别
 	 */
 	public boolean deleteSplb(Integer lbid);
 
 	/**
-	 * 商品类别树
+	 * 产品类别树
 	 */
 	@SuppressWarnings("unchecked")
 	public List findSplbTree();

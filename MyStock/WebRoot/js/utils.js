@@ -1,3 +1,6 @@
+var timestamp = Date.parse(new Date());
+//timestamp = timestamp / 1000;
+	
 var zhMoney = function(v) {
 	var result;
     v = (Math.round((v-0)*100))/100;

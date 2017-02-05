@@ -92,6 +92,7 @@ Ext.onReady(function(){
 					handler:function(){
 						var f = bfForm.getForm();
 						var datafile = f.findField("datafile").getValue();
+						Ext.Msg.alert("信息提示",datafile);
 						if(datafile.substring(datafile.length-4,datafile.length)!=".sql"){
 							Ext.Msg.alert("信息提示","请选择已 .sql 结尾的文件");
 							return ;

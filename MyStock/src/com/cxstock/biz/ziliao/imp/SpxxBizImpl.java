@@ -15,7 +15,7 @@ public class SpxxBizImpl implements SpxxBiz {
 	}
 	
 	/*
-	 * 商品编号
+	 * 产品编号
 	 */
 	@SuppressWarnings("unchecked")
 	public String getSpxxCode() {
@@ -36,7 +36,7 @@ public class SpxxBizImpl implements SpxxBiz {
 	}
 	
 	/*
-	 * 分页查询商品列表
+	 * 分页查询产品列表
 	 */
 	@SuppressWarnings("unchecked")
 	public void findPageSpxx(Page page) {
@@ -51,14 +51,14 @@ public class SpxxBizImpl implements SpxxBiz {
 	}
 	
 	/*
-	 * 保存商品
+	 * 保存产品
 	 */
 	public void save(Spxx dto) {
 		baseDao.save(dto);
 	}
 	
 	/*
-	 * 修改商品
+	 * 修改产品
 	 */
 	public void updateSpxx(Spxx dto) {
 		Spxx spxx = (Spxx)baseDao.loadById(Spxx.class, dto.getSpid());
@@ -66,6 +66,7 @@ public class SpxxBizImpl implements SpxxBiz {
 		spxx.setSpname(dto.getSpname());
 		spxx.setXinghao(dto.getXinghao());
 		spxx.setDw(dto.getDw());
+//		spxx.setTuhao(dto.getTuhao());
 		if(dto.getJhprice()!= null)
 			spxx.setJhprice(dto.getJhprice());
 		if(dto.getChprice()!= null)
@@ -81,7 +82,7 @@ public class SpxxBizImpl implements SpxxBiz {
 	}
 	
 	/*
-	 * 删除商品
+	 * 删除产品
 	 */
 	public boolean deleteSpxx(String spid) {
 		Spxx spxx = (Spxx)baseDao.loadById(Spxx.class, spid);

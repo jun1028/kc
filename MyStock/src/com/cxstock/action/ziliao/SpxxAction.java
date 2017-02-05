@@ -30,7 +30,7 @@ public class SpxxAction extends BaseAction  {
 	private String addupdate;
 	
 	/*
-	 * 商品编号
+	 * 产品编号
 	 */
 	@SuppressWarnings("unchecked")
 	public String getSpxxCode() {
@@ -45,7 +45,7 @@ public class SpxxAction extends BaseAction  {
 	}
 	
 	/** 
-	 * 分页查询商品信息列表 
+	 * 分页查询产品信息列表 
 	 */
 	public String findPageSpxx() {
 		try {
@@ -72,7 +72,7 @@ public class SpxxAction extends BaseAction  {
 	}	
 	
 	/** 
-	 * 期初库存备选商品列表
+	 * 期初库存备选产品列表
 	 */
 	public String findKcPageSpxx() {
 		try {
@@ -101,7 +101,7 @@ public class SpxxAction extends BaseAction  {
 	}
 
 	/**
-	 * 保存/修改商品信息
+	 * 保存/修改产品信息
 	 */
 	public String saveOrUpdateSpxx() {
 		try {
@@ -130,7 +130,7 @@ public class SpxxAction extends BaseAction  {
 	}
     
 	/**
-	 * 删除商品信息
+	 * 删除产品信息
 	 */
 	public String deleteSpxx() {
 		try {
@@ -138,7 +138,7 @@ public class SpxxAction extends BaseAction  {
 			if(bool){
 				this.outString("{success:true}");
 			}else{
-				this.outString("{success:false,error:'该商品已经发生单据，不能删除。'}");
+				this.outString("{success:false,error:'该产品已经发生单据，不能删除。'}");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

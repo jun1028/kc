@@ -19,7 +19,7 @@ public class BsyAction extends BaseAction  {
 	
 	private String tab;
 	private String ymd;
-	private String djsps; //单据商品集合字符串
+	private String djsps; //单据产品集合字符串
 	
 	private String startdate;
 	private String enddate;

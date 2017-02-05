@@ -18,14 +18,14 @@ public interface XsBiz {
 	/**
 	 * 保存/修改销售单
 	 * @param pojo		销售单
-	 * @param jhdsps	销售单商品
+	 * @param jhdsps	销售单产品
 	 */
 	public void saveOrUpdateCkd(Ckd pojo, String ckdsps);
 
 	/**
 	 * 保存/修改退货单
 	 * @param pojo		退货单
-	 * @param jhdsps	退货单商品
+	 * @param jhdsps	退货单产品
 	 */
 	public void saveOrUpdateTkd(Tkd pojo, String thdsps);
 

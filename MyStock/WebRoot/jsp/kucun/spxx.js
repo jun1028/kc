@@ -1,8 +1,8 @@
 	var v_lbid="0", v_lbname="", v_start=0, v_limit=20;
 	
-	//左侧商品类别树
+	//左侧产品类别树
 	var splbTree = new Ext.tree.TreePanel({
-		title:"商品类别",
+		title:"产品类别",
 		region : "west",
 		width : 180,
         minSize: 150,
@@ -42,7 +42,7 @@
 					   			params:{ lbid : v_lbid },
 					   			success : function(o) {
 					   				if(o.responseText=="false"){
-					   					Ext.Msg.alert("信息提示","该类别有商品信息不能删除");
+					   					Ext.Msg.alert("信息提示","该类别有产品信息不能删除");
 					   				}else{
 						   				v_lbid = "0";     //设为默认节点
 						   				v_lbname = "";
@@ -71,13 +71,13 @@
         		}else{
         			splbTree.buttons[1].setDisabled(false);
         		}
-        		//更新商品数据
+        		//更新产品数据
         		spxxStore.load({params:{start:v_start, limit:v_limit,lbid:v_lbid}});
         	}
         }
 	});
 	
-	//商品类别表单
+	//产品类别表单
 	var splbForm = new Ext.FormPanel({
 		layout : "form",
 		baseCls: "x-plain",
@@ -88,7 +88,7 @@
 			xtype:"textfield",
 			anchor : "100%",
 			name:"lbname",
-			fieldLabel:"商品类别",
+			fieldLabel:"产品类别",
 			allowBlank : false,
 			maxLength :20
 		},{
@@ -97,7 +97,7 @@
 		}]
 	});
     
-	//增加商品类别窗口
+	//增加产品类别窗口
     var splbWindow = new Ext.Window({
 		title : "增加类别",
 		width:250,
@@ -174,7 +174,7 @@
 		{ name:"lbname", type:"string"}
 	];
 	
-	//商品数据
+	//产品数据
 	var spxxStore = new Ext.data.JsonStore({
 	    url: "spxx_findPageSpxx.do",
 	    root: "root",
@@ -183,15 +183,15 @@
 	    listeners:{beforeload:function(a){a.baseParams={start:v_start, limit:v_limit};}}
 	});
 	
-	//右侧商品列表
+	//右侧产品列表
     var spxxGrid = new Ext.grid.GridPanel({
         store: spxxStore,
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[
-				{header: "商品编号", width: 85, sortable:true, dataIndex: "spid"},
-	            {header: "商品名称", width: 130, sortable:true, dataIndex: "spname"},
-	            {header: "商品型号", width: 80, sortable:true, dataIndex: "xinghao"},
+				{header: "产品编号", width: 85, sortable:true, dataIndex: "spid"},
+	            {header: "产品名称", width: 130, sortable:true, dataIndex: "spname"},
+	            {header: "产品型号", width: 80, sortable:true, dataIndex: "xinghao"},
 	            {header: "图号", width: 80, sortable:true, dataIndex: "tuhao"},
 	            {header: "库存数量", width: 60, sortable:true, align:"right", dataIndex: "kcsl"},
 	            {header: "单位", width: 50, sortable:true, dataIndex: "dw"},
@@ -202,7 +202,7 @@
         columnLines : true, //列分隔符
 		frame:true,
 		region:"center",
-		title:"商品信息",
+		title:"产品信息",
         iconCls:"",
         
         tbar:[{
@@ -211,7 +211,7 @@
         	handler: function(){
         		var record= spxxGrid.getSelectionModel().getSelected(); 
 				if(!record){
-                	Ext.Msg.alert("信息提示","请选择商品");
+                	Ext.Msg.alert("信息提示","请选择产品");
 				}else{
 	        		addJhWindow.show();
 					addJhForm.getForm().loadRecord(record);
@@ -237,7 +237,7 @@
         	handler: function(){
         		var record= spxxGrid.getSelectionModel().getSelected(); 
 				if(!record){
-                	Ext.Msg.alert("信息提示","请选择要修改的商品");
+                	Ext.Msg.alert("信息提示","请选择要修改的产品");
 				}else{
 	        		addSpWindow.show();
 					addSpForm.getForm().loadRecord(record);
@@ -256,7 +256,7 @@
         	rowdblclick:function(){
         		var record= spxxGrid.getSelectionModel().getSelected(); 
 				if(!record){
-                	Ext.Msg.alert("信息提示","请选择商品");
+                	Ext.Msg.alert("信息提示","请选择产品");
 				}else{
 	        		addJhWindow.show();
 					addJhForm.getForm().loadRecord(record);
@@ -267,7 +267,7 @@
         }
     });
     
-    //商品单位下拉数据
+    //产品单位下拉数据
     var spdwStore = new Ext.data.JsonStore({
 	    xtype:"jsonstore",
 		url: "spdw_findAllSpdw.do",
@@ -276,7 +276,7 @@
 	    fields: [{name:"dwid",type:"int"},"dwname"]
 	});
 	
-	//商品表单
+	//产品表单
     var addSpForm = new Ext.FormPanel({
 		layout : "form",
 		frame:true,
@@ -329,13 +329,13 @@
 				},{
 					xtype : "textfield",
 					name:"spname",
-					fieldLabel:"商品名称",
+					fieldLabel:"产品名称",
 					allowBlank : false,
 					maxLength :20
 				},{
 					xtype : "textfield",
 					name:"xinghao",
-					fieldLabel:"商品型号",
+					fieldLabel:"产品型号",
 					maxLength :20
 				},{
 					xtype : "numberfield",
@@ -357,9 +357,12 @@
 				items:[{
 					xtype : "textfield",
 					name:"spid",
-					fieldLabel:"商品编码",
-					allowBlank : false,
-					maxLength :10
+					fieldLabel:"产品编码",
+//					allowBlank : false,
+					style:"background:#F6F6F6",
+					value:timestamp,
+					readOnly:true,
+					maxLength :20
 				},{
 					xtype : "textfield",
 					name:"tuhao",
@@ -435,9 +438,9 @@
 		}]
 	});
     
-	//增加商品窗口
+	//增加产品窗口
     var addSpWindow = new Ext.Window({
-		title : "增加商品",
+		title : "增加产品",
 		width:550,
 		height:370,
 		closeAction:"hide",
@@ -484,7 +487,7 @@
 	});
 	
     
-	//商品类别树窗口
+	//产品类别树窗口
     var splbTreeWindow = new Ext.Window({
 		width:200,
 		height:300,
@@ -557,7 +560,7 @@
 		}]
 	});
 	
-	//商品单位编辑窗口
+	//产品单位编辑窗口
 	var SpdwWindow = new Ext.Window({
 		xtype:"window",
 		title:"单位",
@@ -622,7 +625,7 @@
 		}]
 	});
 	
-	//商品单位添加窗口
+	//产品单位添加窗口
 	var SpdwAddWin = new Ext.Window({
 		title:"增加单位",
 		width:250,
@@ -686,7 +689,7 @@
 		layout:"column",
 		items:[{
 			xtype:"fieldset",
-			title:"商品信息",
+			title:"产品信息",
 			frame:true,
 			layout:"column",
 			padding:"0 20 0 15",
@@ -700,19 +703,21 @@
 				items:[{
 						xtype:"textfield",
 						style:"background:#F6F6F6",
-						fieldLabel:"商品编号",
+						fieldLabel:"产品编号",
 						name:"spid",
 						readOnly:true,
 						anchor:"100%"
-				},{
-						xtype:"textfield",
-						style:"background:#F6F6F6",
-						name:"xinghao",
-						fieldLabel:"型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号",
-						readOnly:true,
-						value:"￥0.00",
-						anchor:"100%"
-				},{
+				},
+//				{
+//						xtype:"textfield",
+//						style:"background:#F6F6F6",
+//						name:"xinghao",
+//						fieldLabel:"型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号",
+//						readOnly:true,
+//						value:"￥0.00",
+//						anchor:"100%"
+//				},
+				{
 						xtype:"textfield",
 						style:"background:#F6F6F6",
 						name:"scjj",
@@ -729,16 +734,18 @@
 						xtype:"textfield",
 						style:"background:#F6F6F6",
 						name:"spname",
-						fieldLabel:"商品名称",
+						fieldLabel:"产品名称",
 						readOnly:true,
 						anchor:"100%"
-				},{
-						xtype:"textfield",
-						style:"background:#F6F6F6",
-						name:"dw",
-						readOnly:true,
-						anchor:"100%"
-				},{
+				},
+//				{
+//						xtype:"textfield",
+//						style:"background:#F6F6F6",
+//						name:"dw",
+//						readOnly:true,
+//						anchor:"100%"
+//				},
+				{
 						xtype:"textfield",
 						style:"background:#F6F6F6",
 						name:"kcsl",
@@ -786,13 +793,19 @@
 			name : 'lbid'
 		},{
 			xtype : 'hidden',
+			name : 'dw'
+		},{
+			xtype : 'hidden',
+			name : 'xinghao'
+		},{
+			xtype : 'hidden',
 			name : 'lbname'
 		}]
 	});
 	
-	//增加进货商品窗口
+	//增加进货产品窗口
     var addJhWindow = new Ext.Window({
-		title : "商品信息",
+		title : "产品信息",
 		width:400,
 		height:250,
 		closeAction:"hide",
@@ -802,7 +815,7 @@
 		buttonAlign : "center",
 		items : [addJhForm],
 		buttons : [{
-			text : "新增下一商品",
+			text : "新增下一产品",
 			handler : function() {
 				addJhWindow.hide();
 				addJhsp();
@@ -828,7 +841,7 @@
 		}
 	});
 	
-	//添加到进货商品列表
+	//添加到进货产品列表
 	var addJhsp = function(){
 		var g = Ext.getCmp("djspGrid");
 		var s = g.getStore();
@@ -871,7 +884,7 @@
 			columnWidth:0.8,
 			layout:'form',
 			items:[new Ext.ux.form.SearchField({
-					fieldLabel:"商品编号或名称",
+					fieldLabel:"产品编号或名称",
 	                store: spxxStore,
 	                width:320
 			})]
@@ -889,9 +902,9 @@
 		}]
 	});
 	
-	//备选商品窗口
+	//备选产品窗口
 	var bsspWindow = new Ext.Window({
-		title:"库存商品选择框",
+		title:"产品选择框",
 		width:760,
 		height:500,
 		layout:"border",

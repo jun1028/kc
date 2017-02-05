@@ -29,7 +29,7 @@
 	<bean id="khBiz" class="com.cxstock.biz.ziliao.imp.KhBizImpl">
 		<property name="baseDao" ref="baseDao"/>
 	</bean>
-	<!-- 商品管理 -->
+	<!-- 产品管理 -->
 	<bean id="spxxBiz" class="com.cxstock.biz.ziliao.imp.SpxxBizImpl">
 		<property name="baseDao" ref="baseDao"/>
 	</bean>
@@ -37,7 +37,7 @@
 	<bean id="kcBiz" class="com.cxstock.biz.ziliao.imp.KcBizImpl">
 		<property name="baseDao" ref="baseDao"/>
 	</bean>
-	<!-- 商品类别管理 -->
+	<!-- 产品类别管理 -->
 	<bean id="splbBiz" class="com.cxstock.biz.ziliao.imp.SplbBizImpl">
 		<property name="baseDao" ref="baseDao"/>
 	</bean>
@@ -84,7 +84,7 @@
 	<bean id="khAction" class="com.cxstock.action.ziliao.KhAction" scope="prototype">
 		<property name="khBiz" ref="khBiz"/>
 	</bean>
-	<!-- 商品管理 -->
+	<!-- 产品管理 -->
 	<bean id="spxxAction" class="com.cxstock.action.ziliao.SpxxAction" scope="prototype">
 		<property name="spxxBiz" ref="spxxBiz"/>
 	</bean>
@@ -92,7 +92,7 @@
 	<bean id="kcAction" class="com.cxstock.action.ziliao.KcAction" scope="prototype">
 		<property name="kcBiz" ref="kcBiz"/>
 	</bean>
-	<!-- 商品类别管理 -->
+	<!-- 产品类别管理 -->
 	<bean id="splbAction" class="com.cxstock.action.ziliao.SplbAction" scope="prototype">
 		<property name="splbBiz" ref="splbBiz"/>
 	</bean>
@@ -140,7 +140,7 @@
 	<!-- 数据库备份 -->
 	<bean id="dataCopyAction" class="com.cxstock.action.power.DataCopyAction" scope="prototype">
 	</bean>
-	<!-- 商品图片管理 -->
+	<!-- 产品图片管理 -->
 	<bean id="imageUploadAction" class="com.cxstock.action.power.ImageUploadAction" scope="prototype">
 	</bean>
 </beans>

@@ -15,7 +15,7 @@ public class SplbAction extends BaseAction  {
 	private Integer pid;
 	
 	/** 
-	 * 商品类别树
+	 * 产品类别树
 	 */
 	public String findSplbTree() {
 		try {
@@ -28,7 +28,7 @@ public class SplbAction extends BaseAction  {
 	}	
 
 	/**
-	 * 保存/修改商品类别
+	 * 保存/修改产品类别
 	 */
 	public String saveOrUpdateSplb() {
 		try {
@@ -47,7 +47,7 @@ public class SplbAction extends BaseAction  {
 	}
     
 	/**
-	 * 删除商品类别
+	 * 删除产品类别
 	 */
 	public String deleteSplb() {
 		try {

@@ -135,7 +135,7 @@ Ext.onReady(function(){
 		layout:'fit',
 		items:[{
 			frame:true,
-			title:'按月统计分析',
+			title:'按月统计分析(销售金额)',
 			iconCls:'menu-45',
 			layout:'border',
 			items:[tjfxForm,tjfxFlash,tjfxGrid]

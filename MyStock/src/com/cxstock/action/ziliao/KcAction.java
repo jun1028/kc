@@ -53,13 +53,13 @@ public class KcAction extends BaseAction  {
 				if(bool){
 					this.outString("{success:true,message:'保存成功!'}");
 				}else{
-					this.outString("{success:false,errors:'仓库中已存在该商品。'}");
+					this.outString("{success:false,errors:'仓库中已存在该产品。'}");
 				}
 			}else{
 				if(bool){
 					this.outString("{success:true,message:'修改成功!'}");
 				}else{
-					this.outString("{success:false,errors:'该商品已经发生单据，不能修改。'}");
+					this.outString("{success:false,errors:'该产品已经发生单据，不能修改。'}");
 				}
 			}
 		} catch (Exception e) {
@@ -78,7 +78,7 @@ public class KcAction extends BaseAction  {
 			if(bool){
 				this.outString("{success:true}");
 			}else{
-				this.outString("{success:false,error:'该商品已经发生单据，不能删除。'}");
+				this.outString("{success:false,error:'该产品已经发生单据，不能删除。'}");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

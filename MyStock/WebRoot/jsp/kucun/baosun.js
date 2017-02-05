@@ -21,23 +21,23 @@ Ext.onReady(function(){
 		{ name:'lbname', type:'string'}
 	];
 	
-	//商品数据
+	//产品数据
 	var bsdspStore = new Ext.data.JsonStore({
 	    root: 'root',
 	    totalProperty: 'total',
 	    fields: SpxxObj
 	});
 	
-	//商品列表
+	//产品列表
     var bsdspGrid = new Ext.grid.GridPanel({
     	id:'djspGrid',
         store: bsdspStore,
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[new Ext.grid.RowNumberer(),
-				{header: '商品编号', width: 100, sortable:true, dataIndex: 'spid'},
-	            {header: '商品名称', width: 200, sortable:true, dataIndex: 'spname'},
-	            {header: '商品型号', width: 150, sortable:true, dataIndex: 'xinghao'},
+				{header: '产品编号', width: 100, sortable:true, dataIndex: 'spid'},
+	            {header: '产品名称', width: 200, sortable:true, dataIndex: 'spname'},
+//	            {header: '产品型号', width: 150, sortable:true, dataIndex: 'xinghao'},
 	            {header: '单位', width: 100, sortable:true, dataIndex: 'dw'},
 	            {header: '采购价', width: 100, sortable:true, align:'right', renderer:zhMoney, dataIndex: 'cbj'},
 	            {header: '数量', width: 100, sortable:true, align:'center', dataIndex: 'sl'},
@@ -62,7 +62,7 @@ Ext.onReady(function(){
         	handler: function(){
         		var record= bsdspGrid.getSelectionModel().getSelected(); 
 				if(!record){
-                	Ext.Msg.alert('信息提示','请选择要修改的商品');
+                	Ext.Msg.alert('信息提示','请选择要修改的产品');
 				}else{
 	        		addJhWindow.show();
 	        		addJhWindow.buttons[0].setVisible(false);
@@ -76,7 +76,7 @@ Ext.onReady(function(){
         	handler: function(){
         		var record= bsdspGrid.getSelectionModel().getSelected();
 				if(!record){
-                	Ext.Msg.alert('信息提示','请选择要删除的商品');  
+                	Ext.Msg.alert('信息提示','请选择要删除的产品');  
 				}else{
 					Ext.MessageBox.confirm('删除提示', '是否删除该记录？', function(c) {
 						bsdspStore.remove(record);
@@ -156,7 +156,7 @@ Ext.onReady(function(){
 							var f = ckdForm.getForm();
 							if (f.isValid()) {
 								if(bsdspStore.getCount()<=0){
-									Ext.Msg.alert("信息提示","请添加商品");
+									Ext.Msg.alert("信息提示","请添加产品");
 									return;
 								}
 								var jsonArray = [];
@@ -221,7 +221,7 @@ Ext.onReady(function(){
 		layout:'fit',
 		items:[{
 			frame:true,
-			title:'商品报损',
+			title:'产品报损',
 			iconCls:'menu-31',
 			layout:'border',
 			items:[ckdForm,bsdspGrid]

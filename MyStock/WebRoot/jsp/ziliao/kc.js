@@ -6,7 +6,7 @@ Ext.onReady(function(){
 	Ext.QuickTips.init();
 	var v_start=0,v_limit=20;
 	
-	//商品信息
+	//产品信息
 	var SpxxObj = [
 		{ name:'spid', type:'string'},
 		{ name:'spname', type:'string'},
@@ -34,7 +34,7 @@ Ext.onReady(function(){
 		{ name:'dw', type:'string'}
 	];
 	
-	//商品信息数据源
+	//产品信息数据源
 	var spxxStore = new Ext.data.JsonStore({
 		autoLoad:true,
 	    url: 'spxx_findKcPageSpxx.do',
@@ -53,22 +53,22 @@ Ext.onReady(function(){
 	    listeners:{beforeload:function(a){a.baseParams={start:v_start, limit:v_limit};}}
 	});
 	
-	//商品信息列表
+	//产品信息列表
 	var spxxGrid = new Ext.grid.GridPanel({
         store: spxxStore,
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[new Ext.grid.RowNumberer(),
-	            {header: '商品编号', width: 100, sortable:true, dataIndex: 'spid'},
-	            {header: '商品名称', width: 150, sortable:true, dataIndex: 'spname'},
+	            {header: '产品编号', width: 100, sortable:true, dataIndex: 'spid'},
+	            {header: '产品名称', width: 150, sortable:true, dataIndex: 'spname'},
 	            {header: '单位', width: 60, sortable:true, dataIndex: 'dw'},
-	            {header: '商品型号', width: 80, sortable:true, dataIndex: 'xinghao'},
+	            {header: '产品型号', width: 80, sortable:true, dataIndex: 'xinghao'},
 	            {header: '类别', width: 80, sortable:true, dataIndex: 'lbname'}]
         }),
         stripeRows: true, 	//行分隔符
         columnLines : true, //列分隔符
 		frame : true,
-        title:'商品信息',
+        title:'产品信息',
         iconCls:'menu-53',
         
         tbar:[{
@@ -76,7 +76,7 @@ Ext.onReady(function(){
         	width:20
         },{
 			xtype:"tbtext",
-			text:"商品编号或名称:"
+			text:"产品编号或名称:"
 		},{
 			xtype:"textfield",
 			enableKeyEvents:true,
@@ -92,7 +92,7 @@ Ext.onReady(function(){
         	handler: function(){
         		var record= spxxGrid.getSelectionModel().getSelected(); 
 				if(!record){
-                	Ext.Msg.alert('信息提示','请选择先商品');
+                	Ext.Msg.alert('信息提示','请选择先产品');
 				}else{
 	        		addWindow.show();
 	        		addForm.getForm().reset();
@@ -135,10 +135,10 @@ Ext.onReady(function(){
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[new Ext.grid.RowNumberer(),
-	            {header: '商品编号', width: 100, sortable:true, dataIndex: 'spid'},
-	            {header: '商品名称', width: 150, sortable:true, dataIndex: 'spname'},
+	            {header: '产品编号', width: 100, sortable:true, dataIndex: 'spid'},
+	            {header: '产品名称', width: 150, sortable:true, dataIndex: 'spname'},
 	            {header: '单位', width: 60, sortable:true, dataIndex: 'dw'},
-	            {header: '商品型号', width: 80, sortable:true, dataIndex: 'xinghao'},
+	            {header: '产品型号', width: 80, sortable:true, dataIndex: 'xinghao'},
 	            {header: '类别', width: 80, sortable:true, dataIndex: 'lbname'},
 	            {header: '库存数量', width: 80, sortable:true, align:'center', dataIndex: 'sl'},
 	            {header: '成本价', width: 80, sortable:true, align:'right', renderer:zhMoney, dataIndex: 'cbj'},
@@ -232,7 +232,7 @@ Ext.onReady(function(){
 		layout:'column',
 		items:[{
 			xtype:"fieldset",
-			title:"商品信息",
+			title:"产品信息",
 			frame:true,
 			layout:"column",
 			padding:'0 20 0 15',
@@ -246,7 +246,7 @@ Ext.onReady(function(){
 				items:[{
 						xtype:"textfield",
 						style:'background:#F6F6F6',
-						fieldLabel:"商品编号",
+						fieldLabel:"产品编号",
 						name:'spid',
 						readOnly:true,
 						anchor:"100%"
@@ -254,7 +254,7 @@ Ext.onReady(function(){
 						xtype:"textfield",
 						style:'background:#F6F6F6',
 						name:'dw',
-						fieldLabel:"商品单位",
+						fieldLabel:"产品单位",
 						readOnly:true,
 						anchor:"100%"
 				}]
@@ -267,7 +267,7 @@ Ext.onReady(function(){
 						xtype:"textfield",
 						style:'background:#F6F6F6',
 						name:'spname',
-						fieldLabel:"商品名称",
+						fieldLabel:"产品名称",
 						readOnly:true,
 						anchor:"100%"
 				},{
@@ -319,7 +319,7 @@ Ext.onReady(function(){
 	
 	//增加期初库存窗口
     var addWindow = new Ext.Window({
-		title : '库存商品期初建账',
+		title : '库存产品期初建账',
 		width:400,
 		height:230,
 		closeAction:'hide',

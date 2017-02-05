@@ -20,7 +20,7 @@ public class SpdwBizImpl implements SpdwBiz {
 	}
 
 	/*
-	 * 保存/修改商品
+	 * 保存/修改产品
 	 */
 	public void saveOrUpdateSpdw(SpdwDTO dto) {
 		Spdw spdw = new Spdw();
@@ -32,7 +32,7 @@ public class SpdwBizImpl implements SpdwBiz {
 	}
 	
 	/*
-	 * 删除商品
+	 * 删除产品
 	 */
 	public void deleteSpdw(Integer dwid) {
 		baseDao.deleteById(Spdw.class, dwid);	

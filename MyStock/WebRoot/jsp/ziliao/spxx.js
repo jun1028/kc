@@ -1,5 +1,5 @@
 /*!
- * 商品管理
+ * 产品管理
  */
 Ext.onReady(function(){
 	
@@ -22,7 +22,7 @@ Ext.onReady(function(){
 		{ name:'lbname', type:'string'}
 	];
 	
-	//商品数据
+	//产品数据
 	var store = new Ext.data.JsonStore({
 	    url: 'spxx_findPageSpxx.do',
 	    root: 'root',
@@ -31,15 +31,15 @@ Ext.onReady(function(){
 	    listeners:{beforeload:function(a){a.baseParams={start:v_start, limit:v_limit};}}
 	});
 	
-	//商品列表
+	//产品列表
     var grid = new Ext.grid.GridPanel({
         store: store,
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[new Ext.grid.RowNumberer(),
-				{header: '商品编号', width: 100, sortable:true, dataIndex: 'spid'},
-	            {header: '商品名称', width: 130, sortable:true, dataIndex: 'spname'},
-	            {header: '商品型号', width: 80, sortable:true, dataIndex: 'xinghao'},
+				{header: '产品编号', width: 100, sortable:true, dataIndex: 'spid'},
+	            {header: '产品名称', width: 130, sortable:true, dataIndex: 'spname'},
+	            {header: '产品型号', width: 80, sortable:true, dataIndex: 'xinghao'},
 	            {header: '图号', width: 80, sortable:true, dataIndex: 'tuhao'},
 	            {header: '类别', width: 60, sortable:true, dataIndex: 'lbname'},
 	            {header: '单位', width: 60, sortable:true, dataIndex: 'dw'},
@@ -54,7 +54,7 @@ Ext.onReady(function(){
         columnLines : true, //列分隔符
 		frame:true,
 		region:'center',
-		title:'商品信息',
+		title:'产品信息',
         iconCls:'menu-53',
         
         tbar:[{
@@ -76,7 +76,7 @@ Ext.onReady(function(){
         	handler: function(){
         		var record= grid.getSelectionModel().getSelected(); 
 				if(!record){
-                	Ext.Msg.alert('信息提示','请选择要修改的商品');
+                	Ext.Msg.alert('信息提示','请选择要修改的产品');
 				}else{
 	        		addWindow.show();
 					addForm.getForm().loadRecord(record);
@@ -89,9 +89,9 @@ Ext.onReady(function(){
         	handler: function(){
         		var record= grid.getSelectionModel().getSelected();
 				if(!record){
-                	Ext.Msg.alert('信息提示','请选择要删除的商品');  
+                	Ext.Msg.alert('信息提示','请选择要删除的产品');  
 				}else{
-					Ext.MessageBox.confirm('删除提示', '是否删除该商品？', function(c) {
+					Ext.MessageBox.confirm('删除提示', '是否删除该产品？', function(c) {
 					   if(c=='yes'){
 					   		Ext.Ajax.request({
 					   			url : "spxx_deleteSpxx.do",
@@ -124,7 +124,7 @@ Ext.onReady(function(){
         }
     });
     
-    //商品单位下拉数据
+    //产品单位下拉数据
     var spdwStore = new Ext.data.JsonStore({
 	    xtype:'jsonstore',
 		url: 'spdw_findAllSpdw.do',
@@ -134,7 +134,7 @@ Ext.onReady(function(){
 		autoLoad:true
 	});
 	
-	//商品表单
+	//产品表单
     var addForm = new Ext.FormPanel({
 		layout : 'form',
 		frame:true,
@@ -187,13 +187,13 @@ Ext.onReady(function(){
 				},{
 					xtype : 'textfield',
 					name:'spname',
-					fieldLabel:'商品名称',
+					fieldLabel:'产品名称',
 					allowBlank : false,
 					maxLength :20
 				},{
 					xtype : 'textfield',
 					name:'xinghao',
-					fieldLabel:'商品型号',
+					fieldLabel:'产品型号',
 					maxLength :20
 				},{
 					xtype : 'numberfield',
@@ -226,18 +226,19 @@ Ext.onReady(function(){
 				items:[{
 					xtype : 'textfield',
 					name:'spid',
-					fieldLabel:'商品编码',
-					allowBlank : false,
+					fieldLabel:'产品编码',
+//					allowBlank : false,
 					style:"background:#F6F6F6",
-//					readOnly:true,
-					maxLength :10
+					readOnly:true,
+					value:timestamp,
+					maxLength :20
 				},{
 					xtype : 'textfield',
 					name:'tuhao',
 					fieldLabel:'图&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号',
 					allowBlank : false,
 					style:"background:#F6F6F6",
-					maxLength :10
+					maxLength :20
 				},{
 					layout:'column',
 					items:[{
@@ -297,9 +298,9 @@ Ext.onReady(function(){
 		}]
 	});
     
-	//增加商品窗口
+	//增加产品窗口
     var addWindow = new Ext.Window({
-		title : '增加商品',
+		title : '增加产品',
 		width:550,
 		height:370,
 		closeAction:'hide',
@@ -310,7 +311,7 @@ Ext.onReady(function(){
 		buttonAlign : 'center',
 		items : [addForm],
 		buttons : [{
-			text : '新增下一商品',
+			text : '新增下一产品',
 			handler : function() {
 				submitSpxx(true);
 			}
@@ -357,9 +358,9 @@ Ext.onReady(function(){
 		}
 	}
 	
-	//商品类别树
+	//产品类别树
 	var tree = new Ext.tree.TreePanel({
-		title:'商品类别',
+		title:'产品类别',
 		region : 'west',
 		width : 180,
         minSize: 150,
@@ -399,7 +400,7 @@ Ext.onReady(function(){
 					   			params:{ lbid : v_lbid },
 					   			success : function(o) {
 					   				if(o.responseText=="false"){
-					   					Ext.Msg.alert("信息提示","该类别有商品信息不能删除");
+					   					Ext.Msg.alert("信息提示","该类别有产品信息不能删除");
 					   				}else{
 						   				v_lbid = "0";     //设为默认节点
 						   				v_lbname = "";
@@ -428,7 +429,7 @@ Ext.onReady(function(){
         		}else{
         			tree.buttons[1].setDisabled(false);
         		}
-        		//更新商品数据
+        		//更新产品数据
         		store.load({params:{start:v_start, limit:v_limit,lbid:v_lbid}});
         	}
         }
@@ -437,7 +438,7 @@ Ext.onReady(function(){
 	//展开节点
 	tree.getRootNode().expand();
 	
-	//商品类别表单
+	//产品类别表单
 	var splbForm = new Ext.FormPanel({
 		layout : 'form',
 		baseCls: 'x-plain',
@@ -448,7 +449,7 @@ Ext.onReady(function(){
 			xtype:'textfield',
 			anchor : '100%',
 			name:'lbname',
-			fieldLabel:'商品类别',
+			fieldLabel:'产品类别',
 			allowBlank : false,
 			maxLength :20
 		},{
@@ -457,7 +458,7 @@ Ext.onReady(function(){
 		}]
 	});
     
-	//增加商品类别窗口
+	//增加产品类别窗口
     var splbWindow = new Ext.Window({
 		title : '增加类别',
 		width:250,
@@ -514,7 +515,7 @@ Ext.onReady(function(){
 		}]
 	});
     
-	//商品类别树窗口
+	//产品类别树窗口
     var splbTreeWindow = new Ext.Window({
 		width:200,
 		height:300,
@@ -587,7 +588,7 @@ Ext.onReady(function(){
 		}]
 	});
 	
-	//商品单位编辑窗口
+	//产品单位编辑窗口
 	var SpdwWindow = new Ext.Window({
 		xtype:'window',
 		title:'单位',
@@ -652,7 +653,7 @@ Ext.onReady(function(){
 		}]
 	});
 	
-	//商品单位添加窗口
+	//产品单位添加窗口
 	var SpdwAddWin = new Ext.Window({
 		title:'增加单位',
 		width:250,
@@ -705,7 +706,7 @@ Ext.onReady(function(){
 		}]
 	});
 	
-	//设置商品编号
+	//设置产品编号
 	var getCode = function(){
 		Ext.Ajax.request({
    			url : "spxx_getSpxxCode.do",

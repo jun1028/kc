@@ -18,14 +18,14 @@ public interface JhBiz {
 	/**
 	 * 保存/修改进货单
 	 * @param pojo		进货单
-	 * @param jhdsps	进货单商品
+	 * @param jhdsps	进货单产品
 	 */
 	public void saveOrUpdateJhd(Jhd pojo, String jhdsps);
 
 	/**
 	 * 保存/修改退货单
 	 * @param pojo		退货单
-	 * @param jhdsps	退货单商品
+	 * @param jhdsps	退货单产品
 	 */
 	public void saveOrUpdateThd(Thd pojo, String thdsps);
 

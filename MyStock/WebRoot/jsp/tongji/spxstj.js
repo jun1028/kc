@@ -1,5 +1,5 @@
 /*!
- * 商品销售统计
+ * 产品销售统计
  */
 Ext.onReady(function(){
 	
@@ -8,7 +8,7 @@ Ext.onReady(function(){
 	var v_start=0, v_limit=20;
 	var date = new Date();
 	date.setMonth(date.getMonth()-1);
-	//商品类别树窗口
+	//产品类别树窗口
     var splbTreeWindow = new Ext.Window({
 		width:200,
 		height:300,
@@ -97,7 +97,7 @@ Ext.onReady(function(){
 						labelWidth:100,
 						xtype:"textfield",
 						name:'lbname',
-						fieldLabel:"商品类别",
+						fieldLabel:"产品类别",
 						readOnly:true,
 						value:'所有类别',
 						anchor:"90%",
@@ -113,7 +113,7 @@ Ext.onReady(function(){
 						labelWidth:100,
 						xtype:"textfield",
 						name:'search',
-						fieldLabel:"商品编号或名称",
+						fieldLabel:"产品编号或名称",
 						anchor:"90%"
 					}]
 				},{
@@ -173,10 +173,10 @@ Ext.onReady(function(){
 	            {header: '单号', width: 120, sortable:true, align:'center', dataIndex: 'djid'},
 	            {header: '日期', width: 80, sortable:true, align:'center', renderer : Ext.util.Format.dateRenderer('Y-m-d'),  dataIndex: 'riqi'},
 				{header: '供应商', width: 120, sortable:true, dataIndex: 'gyskhname'},
-				{header: '商品编号', width: 80, sortable:true, dataIndex: 'spid'},
-				{header: '商品名称', width: 130, sortable:true, dataIndex: 'spname'},
-				{header: '商品型号', width: 80, sortable:true, dataIndex: 'spxinghao'},
-				{header: '商品类别', width: 80, sortable:true, dataIndex: 'lbname'},
+				{header: '产品编号', width: 80, sortable:true, dataIndex: 'spid'},
+				{header: '产品名称', width: 130, sortable:true, dataIndex: 'spname'},
+				{header: '产品型号', width: 80, sortable:true, dataIndex: 'spxinghao'},
+				{header: '产品类别', width: 80, sortable:true, dataIndex: 'lbname'},
 				{header: '单位', width: 60, sortable:true, dataIndex: 'spdw'},
 				{header: '单价', width: 60, sortable:true, align:'right', renderer:zhMoney, dataIndex: 'dj'},
 				{header: '数量', width: 60, sortable:true, align:'center', dataIndex: 'sl'},
@@ -195,7 +195,7 @@ Ext.onReady(function(){
 		layout:'fit',
 		items:[{
 			frame:true,
-			title:'商品销售统计',
+			title:'产品销售统计',
 			iconCls:'menu-41',
 			layout:'border',
 			items:[djmxForm,djmxGrid]

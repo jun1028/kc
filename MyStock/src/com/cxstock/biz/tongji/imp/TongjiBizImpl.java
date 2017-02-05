@@ -55,7 +55,7 @@ public class TongjiBizImpl implements TongjiBiz {
 	}
 
 	/*
-	 * 商品采购统计
+	 * 产品采购统计
 	 */
 	public List findSpcgTj(String wheres) {
 		List list = new ArrayList();
@@ -73,7 +73,7 @@ public class TongjiBizImpl implements TongjiBiz {
 	}
 
 	/*
-	 * 商品销售统计
+	 * 产品销售统计
 	 */
 	public List findSpxstj(String wheres) {
 		List list = new ArrayList();

@@ -14,7 +14,7 @@
             <column name="djid" length="14" not-null="true" />
         </many-to-one>
         <property name="spid" type="java.lang.String">
-            <column name="spid" length="10" not-null="true" />
+            <column name="spid" length="20" not-null="true" />
         </property>
         <property name="spname" type="java.lang.String">
             <column name="spname" length="20" />

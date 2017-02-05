@@ -4,7 +4,7 @@
 %>
 <html>
 <head>
-	<title>库存管理系统</title>
+	<title>金昌信息管理系统</title>
 	<script type="text/javascript">
 		function check(){
 			var logincode = document.getElementById("logincode").value;
@@ -24,9 +24,9 @@
 	</script>
 	<style type="text/css">
 		* { margin:0 auto; padding:0; border:0;font-size:12px;}
-		body { background:#0462A5; font:12px "宋体"; color:#004C7E;}
+		body { background:url(img/login/login_bg.jpg) no-repeat; font:12px "宋体"; color:#004C7E;}
 		input { border:1px solid #004C7E;}
-		.main { background:url(img/login/bg.jpg) repeat-x;}
+		.main { background:url(img/login/login_bg1.jpg) repeat-x;} 
 		.login { background:#DDF1FE; width:468px; height:262px; border:1px solid #000;}
 		.top { background:url(img/login/login_bg.jpg) repeat-x; width:464px; height:113px; border:1px solid #2376B1; margin-top:1px;}
 		.logo { background:url(img/login/logo.gif) no-repeat; width:150px; height:42px; float:left; margin:29px 0 0 14px;}
@@ -35,7 +35,7 @@
 		.reset { background:url(img/login/reset.gif) no-repeat; cursor:hand; width:71px; height:24px; border:0;} 
 	</style>
 </head>
-
+<!-- #0462A5 -->
 <body>
 <div>
 <table width="100%" height="100%" class="main" cellpadding="0" cellspacing="0">

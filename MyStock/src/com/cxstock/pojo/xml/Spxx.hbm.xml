@@ -7,7 +7,7 @@
 <hibernate-mapping>
     <class name="com.cxstock.pojo.Spxx" table="spxx" catalog="mystock">
         <id name="spid" type="java.lang.String">
-            <column name="spid" length="10" />
+            <column name="spid" length="20" />
         </id>
         <property name="spname" type="java.lang.String">
             <column name="spname" length="20" not-null="true" />

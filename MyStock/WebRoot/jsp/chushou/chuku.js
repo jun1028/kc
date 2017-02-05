@@ -8,6 +8,7 @@ Ext.onReady(function(){
 	var SpxxObj = [
 		{ name:'spid', type:'string'},
 		{ name:'spname', type:'string'},
+		{ name:'tuhao', type:'string'},
 		{ name:'xinghao', type:'string'},
 		{ name:'dw', type:'string'},
 		{ name:'jhprice', type:'string'},
@@ -19,7 +20,7 @@ Ext.onReady(function(){
 		{ name:'lbname', type:'string'}
 	];
 	
-	//商品数据
+	//产品数据
 	var ckspStore = new Ext.data.JsonStore({
 	    url: 'spxx_findPageSpxx.do',
 	    root: 'root',
@@ -28,16 +29,17 @@ Ext.onReady(function(){
 	    listeners:{beforeload:function(a){a.baseParams={start:v_start, limit:v_limit};}}
 	});
 	
-	//商品列表
+	//产品列表
     var ckspGrid = new Ext.grid.GridPanel({
     	id:'djspGrid',
         store: ckspStore,
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[new Ext.grid.RowNumberer(),
-				{header: '商品编号', width: 100, sortable:true, dataIndex: 'spid'},
-	            {header: '商品名称', width: 200, sortable:true, dataIndex: 'spname'},
-	            {header: '商品型号', width: 150, sortable:true, dataIndex: 'xinghao'},
+				{header: '产品编号', width: 100, sortable:true, dataIndex: 'spid'},
+	            {header: '产品名称', width: 200, sortable:true, dataIndex: 'spname'},
+	            //{header: '产品型号', width: 150, sortable:true, dataIndex: 'xinghao'},
+//	            {header: '图号', width: 150, sortable:true, dataIndex: 'tuhao'},
 	            {header: '单位', width: 100, sortable:true, dataIndex: 'dw'},
 	            {header: '销售单价', width: 100, sortable:true, align:'right', renderer:zhMoney, dataIndex: 'cbj'},
 	            {header: '数量', width: 100, sortable:true, align:'center', dataIndex: 'sl'},
@@ -62,7 +64,7 @@ Ext.onReady(function(){
         	handler: function(){
         		var record= ckspGrid.getSelectionModel().getSelected(); 
 				if(!record){
-                	Ext.Msg.alert('信息提示','请选择要修改的商品');
+                	Ext.Msg.alert('信息提示','请选择要修改的产品');
 				}else{
 	        		addJhWindow.show();
 	        		addJhWindow.buttons[0].setVisible(false);
@@ -76,7 +78,7 @@ Ext.onReady(function(){
         	handler: function(){
         		var record= ckspGrid.getSelectionModel().getSelected();
 				if(!record){
-                	Ext.Msg.alert('信息提示','请选择要删除的商品');  
+                	Ext.Msg.alert('信息提示','请选择要删除的产品');  
 				}else{
 					Ext.MessageBox.confirm('删除提示', '是否删除该记录？', function(c) {
 					    var djForm = Ext.getCmp("djForm").getForm();
@@ -244,7 +246,7 @@ Ext.onReady(function(){
 							var f = ckdForm.getForm();
 							if (f.isValid()) {
 								if(ckspStore.getCount()<=0){
-									Ext.Msg.alert("信息提示","请添加商品");
+									Ext.Msg.alert("信息提示","请添加产品");
 									return;
 								}
 								var jsonArray = [];

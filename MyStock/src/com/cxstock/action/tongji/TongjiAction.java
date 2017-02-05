@@ -81,7 +81,7 @@ public class TongjiAction extends BaseAction  {
 	}
 	
 	/**
-	 * 商品采购统计
+	 * 产品采购统计
 	 */
 	public String findSpcgTj(){
 		try {
@@ -113,7 +113,7 @@ public class TongjiAction extends BaseAction  {
 	}
 	
 	/**
-	 * 商品销售统计
+	 * 产品销售统计
 	 */
 	public String findSpxstj(){
 		try {

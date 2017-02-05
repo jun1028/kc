@@ -18,7 +18,7 @@ public class SplbBizImpl implements SplbBiz {
 	}
 	
 	/*
-	 * 保存/修改商品类别
+	 * 保存/修改产品类别
 	 */
 	public Integer saveOrUpdateSplb(SplbDTO dto) {
 		Splb splb = new Splb();
@@ -33,7 +33,7 @@ public class SplbBizImpl implements SplbBiz {
 	}
 	
 	/*
-	 * 删除商品类别
+	 * 删除产品类别
 	 */
 	public boolean deleteSplb(Integer lbid) {
 		int count = baseDao.countQuery("select count(*) from Spxx where lbid = "+lbid);
@@ -45,7 +45,7 @@ public class SplbBizImpl implements SplbBiz {
 	}
 	
 	/*
-	 * 商品类别树
+	 * 产品类别树
 	 */
 	public List findSplbTree() {
 		List list = baseDao.listAll("Splb");
@@ -54,7 +54,7 @@ public class SplbBizImpl implements SplbBiz {
 	
 	/**  
 	 * 通过递归生成tree结构  
-	 * @param List childrenlist 商品类别集合
+	 * @param List childrenlist 产品类别集合
 	 * @param Integer id 节点（父节点id）
 	 */
 	private List getTree(Integer id,List childrenlist) {

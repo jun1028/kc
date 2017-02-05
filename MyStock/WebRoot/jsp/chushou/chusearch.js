@@ -184,7 +184,7 @@ Ext.onReady(function(){
 		{ name:'zj', type:'double'}
 	];
 	
-	//销售商品数据
+	//销售产品数据
 	var ckspStore = new Ext.data.JsonStore({
 	    url: "../xs_findDjspByParams.do?tab=Ckdsp&info=ckd",
 	    root: 'root',
@@ -192,16 +192,16 @@ Ext.onReady(function(){
 	    fields: SpxxObj
 	});
 	
-	//销售商品列表
+	//销售产品列表
     var ckspGrid = new Ext.grid.GridPanel({
     	id:'djspGrid',
         store: ckspStore,
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[new Ext.grid.RowNumberer(),
-				{header: '商品编号', width: 100, sortable:true, dataIndex: 'spid'},
-	            {header: '商品名称', width: 200, sortable:true, dataIndex: 'spname'},
-	            {header: '商品型号', width: 150, sortable:true, dataIndex: 'spxinghao'},
+				{header: '产品编号', width: 100, sortable:true, dataIndex: 'spid'},
+	            {header: '产品名称', width: 200, sortable:true, dataIndex: 'spname'},
+//	            {header: '产品型号', width: 150, sortable:true, dataIndex: 'spxinghao'},
 	            {header: '单位', width: 100, sortable:true, dataIndex: 'spdw'},
 	            {header: '采购价', width: 100, sortable:true, align:'right', renderer:zhMoney, dataIndex: 'dj'},
 	            {header: '数量', width: 100, sortable:true, align:'center', dataIndex: 'sl'},

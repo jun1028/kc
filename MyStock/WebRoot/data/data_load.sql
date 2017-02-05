@@ -50,9 +50,9 @@ DROP TABLE IF EXISTS `bsdsp`;
 CREATE TABLE `bsdsp` (
   `id` int(11) NOT NULL auto_increment,
   `djid` varchar(14) NOT NULL,
-  `spid` varchar(10) NOT NULL COMMENT '商品id',
-  `spname` varchar(20) default NULL COMMENT '商品名称',
-  `spdw` varchar(20) default NULL COMMENT '商品单位',
+  `spid` varchar(10) NOT NULL COMMENT '产品id',
+  `spname` varchar(20) default NULL COMMENT '产品名称',
+  `spdw` varchar(20) default NULL COMMENT '产品单位',
   `spxinghao` varchar(20) default NULL COMMENT '规格型号',
   `dj` double default NULL COMMENT '单价',
   `sl` int(11) default NULL COMMENT '数量',
@@ -62,7 +62,7 @@ CREATE TABLE `bsdsp` (
   KEY `spid` (`spid`),
   CONSTRAINT `bsdsp_ibfk_1` FOREIGN KEY (`spid`) REFERENCES `spxx` (`spid`),
   CONSTRAINT `F_Bsdsp_Bsd` FOREIGN KEY (`djid`) REFERENCES `bsd` (`djid`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='报损单商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='报损单产品';
 
 --
 -- Dumping data for table `bsdsp`
@@ -108,9 +108,9 @@ DROP TABLE IF EXISTS `bydsp`;
 CREATE TABLE `bydsp` (
   `id` int(11) NOT NULL auto_increment,
   `djid` varchar(14) NOT NULL,
-  `spid` varchar(10) NOT NULL COMMENT '商品id',
-  `spname` varchar(20) default NULL COMMENT '商品名称',
-  `spdw` varchar(20) default NULL COMMENT '商品单位',
+  `spid` varchar(10) NOT NULL COMMENT '产品id',
+  `spname` varchar(20) default NULL COMMENT '产品名称',
+  `spdw` varchar(20) default NULL COMMENT '产品单位',
   `spxinghao` varchar(20) default NULL COMMENT '规格型号',
   `dj` double default NULL COMMENT '单价',
   `sl` int(11) default NULL COMMENT '数量',
@@ -120,7 +120,7 @@ CREATE TABLE `bydsp` (
   KEY `spid` (`spid`),
   CONSTRAINT `bydsp_ibfk_1` FOREIGN KEY (`spid`) REFERENCES `spxx` (`spid`),
   CONSTRAINT `FK_Bydsp_Byd` FOREIGN KEY (`djid`) REFERENCES `byd` (`djid`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='报溢单商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='报溢单产品';
 
 --
 -- Dumping data for table `bydsp`
@@ -174,9 +174,9 @@ DROP TABLE IF EXISTS `ckdsp`;
 CREATE TABLE `ckdsp` (
   `id` int(11) NOT NULL auto_increment,
   `djid` varchar(14) NOT NULL,
-  `spid` varchar(10) NOT NULL COMMENT '商品id',
-  `spname` varchar(20) default NULL COMMENT '商品名称',
-  `spdw` varchar(20) default NULL COMMENT '商品单位',
+  `spid` varchar(10) NOT NULL COMMENT '产品id',
+  `spname` varchar(20) default NULL COMMENT '产品名称',
+  `spdw` varchar(20) default NULL COMMENT '产品单位',
   `spxinghao` varchar(20) default NULL COMMENT '规格型号',
   `lbid` int(11) default NULL,
   `lbname` varchar(20) default NULL,
@@ -188,7 +188,7 @@ CREATE TABLE `ckdsp` (
   KEY `spid` (`spid`),
   CONSTRAINT `ckdsp_ibfk_1` FOREIGN KEY (`spid`) REFERENCES `spxx` (`spid`),
   CONSTRAINT `FK_Ckdsp_Ckd` FOREIGN KEY (`djid`) REFERENCES `ckd` (`djid`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='销售单商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='销售单产品';
 
 --
 -- Dumping data for table `ckdsp`
@@ -276,9 +276,9 @@ DROP TABLE IF EXISTS `jhdsp`;
 CREATE TABLE `jhdsp` (
   `id` int(11) NOT NULL auto_increment,
   `djid` varchar(14) NOT NULL,
-  `spid` varchar(10) NOT NULL COMMENT '商品id',
-  `spname` varchar(20) default NULL COMMENT '商品名称',
-  `spdw` varchar(20) default NULL COMMENT '商品单位',
+  `spid` varchar(10) NOT NULL COMMENT '产品id',
+  `spname` varchar(20) default NULL COMMENT '产品名称',
+  `spdw` varchar(20) default NULL COMMENT '产品单位',
   `spxinghao` varchar(20) default NULL COMMENT '规格型号',
   `lbid` int(11) default NULL,
   `lbname` varchar(20) default NULL,
@@ -290,7 +290,7 @@ CREATE TABLE `jhdsp` (
   KEY `spid` (`spid`),
   CONSTRAINT `jhdsp_ibfk_1` FOREIGN KEY (`spid`) REFERENCES `spxx` (`spid`),
   CONSTRAINT `Fk_JhdSp_Jhd` FOREIGN KEY (`djid`) REFERENCES `jhd` (`djid`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='进货单商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='进货单产品';
 
 --
 -- Dumping data for table `jhdsp`
@@ -360,7 +360,7 @@ CREATE TABLE `menu` (
 
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
 LOCK TABLES `menu` WRITE;
-INSERT INTO `menu` VALUES (0,'系统菜单',-1,NULL,1,0,'menu-plugin'),(10,'进货管理',0,NULL,1,1,'menu-1'),(20,'销售管理',0,NULL,1,2,'menu-2'),(30,'库存管理',0,NULL,1,3,'menu-3'),(40,'统计报表',0,NULL,1,4,'menu-4'),(50,'基础资料',0,NULL,1,5,'menu-5'),(60,'系统管理',0,NULL,1,6,'menu-6'),(1010,'进货入库',10,'../jinhuo/jinhuo.jsp',0,1,'menu-11'),(1020,'退货出库',10,'../jinhuo/tuihuo.jsp',0,2,'menu-12'),(1030,'进货单据查询',10,'../jinhuo/jinsearch.jsp',0,3,'menu-13'),(1040,'退货单据查询',10,'../jinhuo/mingxi.jsp',0,4,'menu-14'),(1050,'当前库存查询',10,'../kucun/kcsearch.jsp',0,5,'menu-15'),(2010,'销售出库',20,'../chushou/chuku.jsp',0,1,'menu-21'),(2020,'客户退货',20,'../chushou/tuiku.jsp',0,2,'menu-22'),(2030,'销售单据查询',20,'../chushou/chusearch.jsp',0,3,'menu-23'),(2040,'客户退货查询',20,'../chushou/mingxi.jsp',0,4,'menu-24'),(2050,'当前库存查询',20,'../kucun/kcsearch.jsp',0,5,'menu-25'),(3010,'商品报损',30,'../kucun/baosun.jsp',0,1,'menu-31'),(3020,'商品报溢',30,'../kucun/baoyi.jsp',0,2,'menu-32'),(3030,'库存报警',30,'../kucun/baojing.jsp',0,3,'menu-33'),(3040,'报损报溢查询',30,'../kucun/biansearch.jsp',0,4,'menu-34'),(3050,'当前库存查询',30,'../kucun/kcsearch.jsp',0,5,'menu-35'),(4010,'供应商统计',40,'../tongji/gystj.jsp',0,1,'menu-41'),(4020,'客户统计',40,'../tongji/khtj.jsp',0,2,'menu-42'),(4030,'商品采购统计',40,'../tongji/spcgtj.jsp',0,3,'menu-43'),(4040,'商品销售统计',40,'../tongji/spxstj.jsp',0,4,'menu-44'),(4050,'按日统计分析',40,'../tongji/tjfxri.jsp',0,5,'menu-45'),(4060,'按月统计分析',40,'../tongji/tjfxyue.jsp',0,6,'menu-46'),(5010,'供应商管理',50,'../ziliao/gys.jsp',0,1,'menu-51'),(5020,'客户管理',50,'../ziliao/kh.jsp',0,2,'menu-52'),(5030,'商品管理',50,'../ziliao/spxx.jsp',0,3,'menu-53'),(5040,'期初库存',50,'../ziliao/kc.jsp',0,4,'menu-54'),(6010,'角色管理',60,'../power/role.jsp',0,1,'menu-61'),(6020,'用户管理',60,'../power/user.jsp',0,2,'menu-62'),(6030,'数据库管理',60,'../power/beifen.jsp',3,3,'menu-63');
+INSERT INTO `menu` VALUES (0,'系统菜单',-1,NULL,1,0,'menu-plugin'),(10,'进货管理',0,NULL,1,1,'menu-1'),(20,'销售管理',0,NULL,1,2,'menu-2'),(30,'库存管理',0,NULL,1,3,'menu-3'),(40,'统计报表',0,NULL,1,4,'menu-4'),(50,'基础资料',0,NULL,1,5,'menu-5'),(60,'系统管理',0,NULL,1,6,'menu-6'),(1010,'进货入库',10,'../jinhuo/jinhuo.jsp',0,1,'menu-11'),(1020,'退货出库',10,'../jinhuo/tuihuo.jsp',0,2,'menu-12'),(1030,'进货单据查询',10,'../jinhuo/jinsearch.jsp',0,3,'menu-13'),(1040,'退货单据查询',10,'../jinhuo/mingxi.jsp',0,4,'menu-14'),(1050,'当前库存查询',10,'../kucun/kcsearch.jsp',0,5,'menu-15'),(2010,'销售出库',20,'../chushou/chuku.jsp',0,1,'menu-21'),(2020,'客户退货',20,'../chushou/tuiku.jsp',0,2,'menu-22'),(2030,'销售单据查询',20,'../chushou/chusearch.jsp',0,3,'menu-23'),(2040,'客户退货查询',20,'../chushou/mingxi.jsp',0,4,'menu-24'),(2050,'当前库存查询',20,'../kucun/kcsearch.jsp',0,5,'menu-25'),(3010,'产品报损',30,'../kucun/baosun.jsp',0,1,'menu-31'),(3020,'产品报溢',30,'../kucun/baoyi.jsp',0,2,'menu-32'),(3030,'库存报警',30,'../kucun/baojing.jsp',0,3,'menu-33'),(3040,'报损报溢查询',30,'../kucun/biansearch.jsp',0,4,'menu-34'),(3050,'当前库存查询',30,'../kucun/kcsearch.jsp',0,5,'menu-35'),(4010,'供应商统计',40,'../tongji/gystj.jsp',0,1,'menu-41'),(4020,'客户统计',40,'../tongji/khtj.jsp',0,2,'menu-42'),(4030,'产品采购统计',40,'../tongji/spcgtj.jsp',0,3,'menu-43'),(4040,'产品销售统计',40,'../tongji/spxstj.jsp',0,4,'menu-44'),(4050,'按日统计分析',40,'../tongji/tjfxri.jsp',0,5,'menu-45'),(4060,'按月统计分析',40,'../tongji/tjfxyue.jsp',0,6,'menu-46'),(5010,'供应商管理',50,'../ziliao/gys.jsp',0,1,'menu-51'),(5020,'客户管理',50,'../ziliao/kh.jsp',0,2,'menu-52'),(5030,'产品管理',50,'../ziliao/spxx.jsp',0,3,'menu-53'),(5040,'期初库存',50,'../ziliao/kc.jsp',0,4,'menu-54'),(6010,'角色管理',60,'../power/role.jsp',0,1,'menu-61'),(6020,'用户管理',60,'../power/user.jsp',0,2,'menu-62'),(6030,'数据库管理',60,'../power/beifen.jsp',3,3,'menu-63');
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 
@@ -444,7 +444,7 @@ CREATE TABLE `splb` (
   `lbname` varchar(20) default NULL COMMENT '类别名称',
   `pid` int(11) default NULL COMMENT '父类别id',
   PRIMARY KEY  (`lbid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品类别';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品类别';
 
 --
 -- Dumping data for table `splb`
@@ -462,7 +462,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `spxx`;
 CREATE TABLE `spxx` (
-  `spid` varchar(10) NOT NULL COMMENT '商品id',
+  `spid` varchar(10) NOT NULL COMMENT '产品id',
   `spname` varchar(20) NOT NULL COMMENT '货物名称',
   `xinghao` varchar(20) default NULL COMMENT '型号',
   `lbid` int(11) NOT NULL COMMENT '类别id',
@@ -480,7 +480,7 @@ CREATE TABLE `spxx` (
   PRIMARY KEY  (`spid`),
   KEY `FK_Spxx_Splb` (`lbid`),
   CONSTRAINT `FK_Spxx_Splb` FOREIGN KEY (`lbid`) REFERENCES `splb` (`lbid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品';
 
 --
 -- Dumping data for table `spxx`
@@ -513,7 +513,7 @@ CREATE TABLE `thd` (
   KEY `FK_Thd_Users` (`userid`),
   CONSTRAINT `FK_Thd_Gys` FOREIGN KEY (`gysid`) REFERENCES `gys` (`gysid`) ON DELETE SET NULL,
   CONSTRAINT `FK_Thd_Users` FOREIGN KEY (`userid`) REFERENCES `users` (`userid`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='商品退库';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='产品退库';
 
 --
 -- Dumping data for table `thd`
@@ -533,9 +533,9 @@ DROP TABLE IF EXISTS `thdsp`;
 CREATE TABLE `thdsp` (
   `id` int(11) NOT NULL auto_increment,
   `djid` varchar(14) NOT NULL,
-  `spid` varchar(10) NOT NULL COMMENT '商品id',
-  `spname` varchar(20) default NULL COMMENT '商品名称',
-  `spdw` varchar(20) default NULL COMMENT '商品单位',
+  `spid` varchar(10) NOT NULL COMMENT '产品id',
+  `spname` varchar(20) default NULL COMMENT '产品名称',
+  `spdw` varchar(20) default NULL COMMENT '产品单位',
   `spxinghao` varchar(20) default NULL COMMENT '规格型号',
   `lbid` int(11) default NULL,
   `lbname` varchar(20) default NULL,
@@ -547,7 +547,7 @@ CREATE TABLE `thdsp` (
   KEY `spid` (`spid`),
   CONSTRAINT `thdsp_ibfk_1` FOREIGN KEY (`spid`) REFERENCES `spxx` (`spid`),
   CONSTRAINT `FK_Thdsp_Thd` FOREIGN KEY (`djid`) REFERENCES `thd` (`djid`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='退货单商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='退货单产品';
 
 --
 -- Dumping data for table `thdsp`
@@ -611,9 +611,9 @@ DROP TABLE IF EXISTS `tkdsp`;
 CREATE TABLE `tkdsp` (
   `id` int(11) NOT NULL auto_increment,
   `djid` varchar(14) NOT NULL,
-  `spid` varchar(10) NOT NULL COMMENT '商品id',
-  `spname` varchar(20) default NULL COMMENT '商品名称',
-  `spdw` varchar(20) default NULL COMMENT '商品单位',
+  `spid` varchar(10) NOT NULL COMMENT '产品id',
+  `spname` varchar(20) default NULL COMMENT '产品名称',
+  `spdw` varchar(20) default NULL COMMENT '产品单位',
   `spxinghao` varchar(20) default NULL COMMENT '规格型号',
   `lbid` int(11) default NULL,
   `lbname` varchar(20) default NULL,
@@ -625,7 +625,7 @@ CREATE TABLE `tkdsp` (
   KEY `spid` (`spid`),
   CONSTRAINT `tkdsp_ibfk_5` FOREIGN KEY (`spid`) REFERENCES `spxx` (`spid`),
   CONSTRAINT `tkdsp_ibfk_4` FOREIGN KEY (`djid`) REFERENCES `tkd` (`djid`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='客户退货商品';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='客户退货产品';
 
 --
 -- Dumping data for table `tkdsp`

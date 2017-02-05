@@ -7,7 +7,7 @@ Ext.onReady(function(){
 	
 	var v_lbid="0",v_lbname="所有类别",v_start=0, v_limit=20;
 	
-	//商品类别树窗口
+	//产品类别树窗口
     var splbTreeWindow = new Ext.Window({
 		width:240,
 		height:260,
@@ -99,7 +99,7 @@ Ext.onReady(function(){
 						id:"lbtext",
 						xtype : "textfield",
 						name:"lbname",
-						fieldLabel:"商品类别",
+						fieldLabel:"产品类别",
 						value:"所有类别",
 						maxLength :50,
 						enableKeyEvents:true,
@@ -116,7 +116,7 @@ Ext.onReady(function(){
 						labelWidth:100,
 						xtype:"textfield",
 						name:"search",
-						fieldLabel:"商品编号或名称"
+						fieldLabel:"产品编号或名称"
 					}]
 				},{
 					width:250,
@@ -171,8 +171,8 @@ Ext.onReady(function(){
 	});
 	
 	var headercolumns = [
-				 {header: '商品编号', width: 100, sortable:true, id:'spid123456', dataIndex: 'spid'},
-			     {header: '商品名称', width: 130, sortable:true, dataIndex: 'spname'},
+				 {header: '产品编号', width: 100, sortable:true, id:'spid123456', dataIndex: 'spid'},
+			     {header: '产品名称', width: 130, sortable:true, dataIndex: 'spname'},
 			     {header: '类别', width: 60, sortable:true, dataIndex: 'lbname'},
 			     {header: '型号', width: 80, sortable:true, dataIndex: 'xinghao'},
 			     {header: '图号', width: 80, sortable:true, dataIndex: 'tuhao'},

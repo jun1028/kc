@@ -19,14 +19,14 @@ public interface TongjiBiz {
 	public List findKhTj(String string);
 
 	/**
-	 * 商品采购统计
+	 * 产品采购统计
 	 * @param string 统计条件
 	 * @return
 	 */
 	public List findSpcgTj(String string);
 
 	/**
-	 * 商品销售统计
+	 * 产品销售统计
 	 * @param string 统计条件
 	 * @return
 	 */

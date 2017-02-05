@@ -178,13 +178,14 @@ Ext.onReady(function(){
 		{ name:'spid', type:'string'},
 		{ name:'spname', type:'string'},
 		{ name:'spxinghao', type:'string'},
+		{ name:'tuhao', type:'string'},
 		{ name:'spdw', type:'string'},
 		{ name:'dj', type:'double'},
 		{ name:'sl', type:'string'},
 		{ name:'zj', type:'double'}
 	];
 	
-	//进货商品数据
+	//进货产品数据
 	var jhspStore = new Ext.data.JsonStore({
 	    url: "../jh_findDjspByParams.do?tab=Jhdsp&info=jhd",
 	    root: 'root',
@@ -192,16 +193,17 @@ Ext.onReady(function(){
 	    fields: SpxxObj
 	});
 	
-	//进货商品列表
+	//进货产品列表
     var jhspGrid = new Ext.grid.GridPanel({
     	id:'djspGrid',
         store: jhspStore,
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[new Ext.grid.RowNumberer(),
-				{header: '商品编号', width: 100, sortable:true, dataIndex: 'spid'},
-	            {header: '商品名称', width: 200, sortable:true, dataIndex: 'spname'},
-	            {header: '商品型号', width: 150, sortable:true, dataIndex: 'spxinghao'},
+				{header: '产品编号', width: 100, sortable:true, dataIndex: 'spid'},
+	            {header: '产品名称', width: 200, sortable:true, dataIndex: 'spname'},
+//	            {header: '产品型号', width: 150, sortable:true, dataIndex: 'spxinghao'},
+	            {header: '图号', width: 150, sortable:true, dataIndex: 'tuhao'},
 	            {header: '单位', width: 100, sortable:true, dataIndex: 'spdw'},
 	            {header: '采购价', width: 100, sortable:true, align:'right', renderer:zhMoney, dataIndex: 'dj'},
 	            {header: '数量', width: 100, sortable:true, align:'center', dataIndex: 'sl'},

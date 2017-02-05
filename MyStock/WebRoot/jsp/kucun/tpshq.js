@@ -13,7 +13,7 @@ Ext.onReady(function(){
 		padding : 20,
 		items:[{
 			xtype:"fieldset",
-			title:"商品图片",
+			title:"产品图片",
 			padding:'20',
 			layout:"column",
 			defaults:{
@@ -74,7 +74,7 @@ Ext.onReady(function(){
 		layout:'fit',
 		items:[{
 			frame:true,
-			title:'商品图片管理',
+			title:'产品图片管理',
 			iconCls:'menu-63',
 			layout:'fit',
 			items:[bfForm]

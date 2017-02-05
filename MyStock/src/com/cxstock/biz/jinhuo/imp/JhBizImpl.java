@@ -47,13 +47,13 @@ public class JhBizImpl implements JhBiz {
 		List spxxList = new ArrayList();
 		for (int i = 0; i < jsonArray.size(); i++) {
 			JSONObject jo = (JSONObject) jsonArray.get(i);
-			//单据商品
+			//单据产品
 			Jhdsp jhdsp = new Jhdsp();
 			jhdsp.setJhd(pojo);
 			jhdsp.setSpid(jo.getString("spid"));
 			jhdsp.setSpname(jo.getString("spname"));
 			jhdsp.setSpdw(jo.getString("dw"));
-			jhdsp.setSpxinghao(jo.getString("xinghao"));
+//			jhdsp.setSpxinghao(jo.getString("xinghao"));
 			jhdsp.setLbid(jo.getInt("lbid"));
 			jhdsp.setLbname(jo.getString("lbname"));
 			jhdsp.setDj(jo.getDouble("cbj"));
@@ -92,7 +92,7 @@ public class JhBizImpl implements JhBiz {
 			thdsp.setSpid(jo.getString("spid"));
 			thdsp.setSpname(jo.getString("spname"));
 			thdsp.setSpdw(jo.getString("dw"));
-			thdsp.setSpxinghao(jo.getString("xinghao"));
+//			thdsp.setSpxinghao(jo.getString("xinghao"));
 			thdsp.setLbid(jo.getInt("lbid"));
 			thdsp.setLbname(jo.getString("lbname"));
 			thdsp.setDj(jo.getDouble("cbj"));

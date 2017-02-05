@@ -30,7 +30,7 @@ public class JhAction extends BaseAction  {
 	private String tab;
 	private String info;
 	private String ymd;
-	private String djsps; //单据商品集合字符串
+	private String djsps; //单据产品集合字符串
 	
 	private String startdate;
 	private String enddate;
@@ -169,7 +169,7 @@ public class JhAction extends BaseAction  {
 	}
 	
 	/**
-	 * 查询单据商品
+	 * 查询单据产品
 	 */
 	@SuppressWarnings("unchecked")
 	public String findDjspByParams(){

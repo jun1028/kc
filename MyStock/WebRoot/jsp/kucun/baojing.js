@@ -1,5 +1,5 @@
 /*!
- * 商品管理
+ * 产品管理
  */
 Ext.onReady(function(){
 	
@@ -23,7 +23,7 @@ Ext.onReady(function(){
 		{ name:'lbname', type:'string'}
 	];
 	
-	//商品数据
+	//产品数据
 	var bjStore = new Ext.data.JsonStore({
 	    url: 'search_findBaoJingSpxx.do',
 	    root: 'root',
@@ -31,15 +31,15 @@ Ext.onReady(function(){
 	    fields: SpxxObj
 	});
 	
-	//商品列表
+	//产品列表
     var bjGrid = new Ext.grid.GridPanel({
         store: bjStore,
         cm: new Ext.grid.ColumnModel({
 			defaults: {	menuDisabled : true},//禁止表头菜单
 			columns:[new Ext.grid.RowNumberer(),
-				{header: '商品编号', width: 100, sortable:true, dataIndex: 'spid'},
-	            {header: '商品名称', width: 130, sortable:true, dataIndex: 'spname'},
-	            {header: '商品型号', width: 80, sortable:true, dataIndex: 'xinghao'},
+				{header: '产品编号', width: 100, sortable:true, dataIndex: 'spid'},
+	            {header: '产品名称', width: 130, sortable:true, dataIndex: 'spname'},
+	            {header: '产品型号', width: 80, sortable:true, dataIndex: 'xinghao'},
 	            {header: '图号', width: 80, sortable:true, dataIndex: 'tuhao'},
 	            {header: '类别', width: 60, sortable:true, dataIndex: 'lbname'},
 	            {header: '单位', width: 60, sortable:true, dataIndex: 'dw'},

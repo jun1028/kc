@@ -18,14 +18,14 @@ public interface BsyBiz {
 	/**
 	 * 保存/修改进货单
 	 * @param pojo		报损单
-	 * @param jhdsps	报损单商品
+	 * @param jhdsps	报损单产品
 	 */
 	public void saveOrUpdateBsd(Bsd pojo, String bsdsps);
 
 	/**
 	 * 保存/修改退货单
 	 * @param pojo		报溢单
-	 * @param jhdsps	报溢单商品
+	 * @param jhdsps	报溢单产品
 	 */
 	public void saveOrUpdateByd(Byd pojo, String bydsps);
 
