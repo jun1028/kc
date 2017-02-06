@@ -227,7 +227,7 @@ Ext.onReady(function(){
 					xtype : 'textfield',
 					name:'spid',
 					fieldLabel:'产品编码',
-//					allowBlank : false,
+					allowBlank : false,
 					style:"background:#F6F6F6",
 					readOnly:true,
 					value:timestamp,

@@ -19,20 +19,23 @@ public class SpxxBizImpl implements SpxxBiz {
 	 */
 	@SuppressWarnings("unchecked")
 	public String getSpxxCode() {
-		String hql = "select max(spid) from Spxx";
-		List list = baseDao.findByHql(hql);
-		Object obj = list.get(0);
-		if(obj!=null){
-			Integer code = Integer.valueOf(obj.toString())+1;
-			String codes = code.toString();
-			int length = codes.length();
-			for (int i = 4; i > length; i--) {
-				codes = "0"+codes;
-			}
-			return codes;
-		}else{
-			return "0001";
-		}
+		Long code  =  System.currentTimeMillis();
+		String codes = code.toString();
+//		String hql = "select max(spid) from Spxx";
+//		List list = baseDao.findByHql(hql);
+//		Object obj = list.get(0);
+//		if(obj!=null){
+//			Integer code = Integer.valueOf(obj.toString())+1;
+//			String codes = code.toString();
+//			int length = codes.length();
+//			for (int i = 4; i > length; i--) {
+//				codes = "0"+codes;
+//			}
+//			return codes;
+//		}else{
+//			return "0001";
+//		}
+		return codes;
 	}
 	
 	/*
@@ -66,7 +69,7 @@ public class SpxxBizImpl implements SpxxBiz {
 		spxx.setSpname(dto.getSpname());
 		spxx.setXinghao(dto.getXinghao());
 		spxx.setDw(dto.getDw());
-//		spxx.setTuhao(dto.getTuhao());
+		spxx.setTuhao(dto.getTuhao());
 		if(dto.getJhprice()!= null)
 			spxx.setJhprice(dto.getJhprice());
 		if(dto.getChprice()!= null)
