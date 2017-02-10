@@ -9,6 +9,7 @@
     <script type="text/javascript" src="../../ext/ext-lang-zh_CN.js"></script>
     <script type="text/javascript" src="../../js/utils.js"></script>
 	<script type="text/javascript" src="../../ext/DateField.js"></script>
+	<script type="text/javascript" src="../../js/grid2Excel.js"></script>
     <!-- uxChartPack -->
     <script type="text/javascript" src="../../ext/charts/uxmedia.js"></script>
    	<script type="text/javascript" src="../../ext/charts/uxflash.js"></script>

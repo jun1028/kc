@@ -57,7 +57,7 @@ Ext.onReady(function(){
 			id:"khfieldset",
 			xtype:"fieldset",
 			title:"查询设置",
-			padding:'0 20 0 15',
+			padding:'0 20 0 15 20',
 			items:[{
 				layout:"column",
 				defaults:{
@@ -127,6 +127,16 @@ Ext.onReady(function(){
 							if (f.isValid()) {
 								djmxStore.load({params:f.getValues()});
 							}
+						}
+					}]
+				},{
+					width:100,
+					items:[{
+						width:90,
+						xtype:"button",
+						text:"导出到excel",
+						handler:function(){
+							exportexcel(djmxGrid, {store:null,title:"导出到excel"}); 
 						}
 					}]
 				}]

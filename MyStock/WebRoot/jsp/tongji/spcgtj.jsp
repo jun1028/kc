@@ -8,6 +8,7 @@
     <script type="text/javascript" src="../../ext/ext-all.js"></script>
     <script type="text/javascript" src="../../ext/ext-lang-zh_CN.js"></script>
     <script type="text/javascript" src="../../js/utils.js"></script>
+    <script type="text/javascript" src="../../js/grid2Excel.js"></script>
     <script type="text/javascript" src="spcgtj.js"></script>
   </head>
   <body>

@@ -35,7 +35,7 @@ Ext.onReady(function(){
 			id:"tjfxfieldset",
 			xtype:"fieldset",
 			title:"统计设置",
-			padding:'0 20 0 15',
+			padding:'0 20 0 15 20',
 			items:[{
 				layout:"column",
 				defaults:{
@@ -81,6 +81,16 @@ Ext.onReady(function(){
 						handler:function(){
 							//params:f.getValues()
 							dataLoad();
+						}
+					}]
+				},{
+					width:100,
+					items:[{
+						width:90,
+						xtype:"button",
+						text:"导出到excel",
+						handler:function(){
+							exportexcel(tjfxGrid, {store:null,title:"导出到excel"}); 
 						}
 					}]
 				}]

@@ -11,7 +11,7 @@
 		<property name="url" value="jdbc:mysql://localhost:3306/mystock?useUnicode=true&amp;characterEncoding=UTF-8">
 		</property>
 		<property name="username" value="root"></property>
-		<property name="password" value="root"></property>
+		<property name="password" value="hello1234"></property>
 	</bean>
 
     <!-- SessionFactory -->

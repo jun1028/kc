@@ -6,7 +6,7 @@ Ext.onReady(function(){
 	Ext.QuickTips.init();
 	
 	var v_lbid="0",v_lbname="所有类别",v_start=0, v_limit=20;
-		
+	
 	//产品类别树窗口
     var splbTreeWindow = new Ext.Window({
 		width:240,
@@ -82,7 +82,7 @@ Ext.onReady(function(){
 		items:[{
 			xtype:"fieldset",
 			title:"查询设置",
-			padding:"0 20 0 15",
+			padding:"0 20 0 15 20",
 			items:[{
 				layout:"column",
 				defaults:{
@@ -132,6 +132,16 @@ Ext.onReady(function(){
 							}
 						}
 					}]
+				},{
+					width:250,
+					items:[{
+						width:90,
+						xtype:"button",
+						text:"导出到excel",
+						handler:function(){
+							exportexcel(kcspGrid, {store:null,title:"导出到excel"}); 
+						}
+					}]
 				}]
 			},{
 				xtype:'hidden',
@@ -140,7 +150,7 @@ Ext.onReady(function(){
 			}]
 		}]
 	});
-	
+   
 	var DqkcObj = [
 		{ name:'spid', type:'string'},
 		{ name:'spname', type:'string'},
