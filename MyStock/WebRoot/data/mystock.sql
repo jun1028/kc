@@ -117,6 +117,7 @@ CREATE TABLE `ckdsp` (
   `lbname` varchar(20) default NULL,
   `dj` double default NULL COMMENT '单价',
   `sl` int(11) default NULL COMMENT '数量',
+  `kpsl` int(8) default 0 COMMENT '开票数',
   `zj` double default NULL COMMENT '总价',
   PRIMARY KEY  (`id`),
   KEY `FK_Ckdsp_Ckd` (`djid`),
@@ -176,6 +177,7 @@ CREATE TABLE `jhdsp` (
   `lbname` varchar(20) default NULL,
   `dj` double default NULL COMMENT '单价',
   `sl` int(11) default NULL COMMENT '数量',
+  `kpsl` int(8) default 0 COMMENT '开票数',
   `zj` double default NULL COMMENT '总价',
   PRIMARY KEY  (`id`),
   KEY `Fk_JhdSp_Jhd` (`djid`),
@@ -276,6 +278,7 @@ CREATE TABLE `spxx` (
   `kcsl` int(11) default '0',
   `kczj` double default '0',
   `minnum` int(11) default '0',
+  `kpsl` int(11) default '0',
   `csname` varchar(50) default NULL,
   `state` varchar(1) default '0',
   `cktype` varchar(20) DEFAULT '成品仓库' COMMENT '仓库类型',
@@ -383,7 +386,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `userid` int(11) NOT NULL auto_increment,
   `logincode` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(64) NOT NULL,
   `username` varchar(20) NOT NULL,
   `roleid` int(11) default NULL,
   `state` int(11) NOT NULL,
@@ -481,7 +484,7 @@ INSERT INTO `spdw` VALUES ('2', '袋');
 INSERT INTO `spdw` VALUES ('3', '盒');
 INSERT INTO `spdw` VALUES ('4', '相');
 INSERT INTO `spdw` VALUES ('5', '千克');
-INSERT INTO `users` VALUES ('1', 'admin', 'admin', '管理员', '1', '0', '系统管理员');
+INSERT INTO `users` VALUES ('1', 'admin', md5('admin'), '管理员', '1', '0', '系统管理员');
 
 -- ----------------------------
 -- Trigger structure for ckdsp_setspxx

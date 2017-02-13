@@ -10,6 +10,7 @@ import com.cxstock.biz.power.dto.UserMenuDTO;
 import com.cxstock.dao.BaseDAO;
 import com.cxstock.pojo.Role;
 import com.cxstock.pojo.Users;
+import com.cxstock.util.MD5Util;
 import com.cxstock.utils.pubutil.Page;
 
 public class UserBizImpl implements UserBiz {
@@ -25,7 +26,7 @@ public class UserBizImpl implements UserBiz {
 	 */
 	@SuppressWarnings("unchecked")
 	public UserDTO login(String code, String pass) {
-		String hql="from Users as t where t.logincode='"+code+"' and t.password='"+pass+"'";
+		String hql="from Users as t where t.logincode='"+code+"' and t.password=md5('"+pass+"')";
 		Users user = (Users)baseDao.loadObject(hql);
 		if(user!=null){
 			UserDTO dto = UserDTO.createDto(user);
